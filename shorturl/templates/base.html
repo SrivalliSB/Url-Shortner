@@ -43,10 +43,13 @@
         <div class='container'>
             <a class="navbar-brand" href="#">MyUrlShortner</a>
             <form class="form-inline">
-          
-                <a style="margin: 10px;" href='/'> <button class="btn btn-outline-secondary" type="button">HOME</button></a>
+                {% if user.is_authenticated %}
+                <a style="margin: 10px;" href='/signout'> <button class="btn btn-outline-secondary" type="button">LOGOUT</button></a>
+                {% else %}
+                
                 <a href='/signin'> <button class="btn btn-outline-secondary" type="button">SIGN IN</button></a>
                 <a style="margin: 10px;" href='/signup'> <button class="btn btn-outline-secondary" type="button">SIGNUP</button></a>
+                {% endif %}
               </form> 
               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

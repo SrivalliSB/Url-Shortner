@@ -19,53 +19,58 @@
         <div class="col-md-8">
             <h2>Your ShortLinks</h2>
           
-            
-                <!-- <div class="card" style="width: 67rem; background-color: white;">
+            {% for url in url_instances %}
+                <div class="card" style="width: 67rem; background-color: white;color: black;">
                     <div class="card-body">
                         <div style="display: flex; justify-content:space-between;">
                             <div>
-                                <label>LINK TITLE:<br> {{url.title}}</label>
+                                <label >LINK TITLE:<br></label>
+                                <br>
+                                <p>{{url.title}}</p>
                                 
                                 <br>
                             </div>
 
                             <div>
                                 <p class="card-text">LINK:<br></p>
-                                <a href="{{url.long_url}}" target="_blank">{{url.long_url|truncatechars:60}}</a>
+                                <a href="{{url.long_url}}" target="_blank"  style="padding-bottom: 5px;padding-right:38px ; margin:3px; font-size: 20px;">{{url.long_url|truncatechars:60}}</a>
                             </div>
                             <div>
                            
                          <label>SHORT LINK:</label><br>
-                         <a href="http://127.0.0.1:8000/{{url.short_hash}}" target="_blank">http://127.0.0.1:8000/{{url.short_hash}}</a>
+                         <a href="http://127.0.0.1:8000/{{url.short_hash}}" target="_blank" style="padding-bottom: 5px;padding-right:38px ; margin:3px; font-size: 20px;">http://127.0.0.1:8000/{{url.short_hash}}</a>
                             </div>
                         <div>
-                        <label style="margin-top:2px">CLICK COUNT: {{url.no_clicks}}</label>
+                        <label style="margin-top:2px">CLICK COUNT:</label><br>
+                        <p>{{url.no_clicks}}</p>
                         </div>
                         
                     </div>
                 </div>
-            </div> -->
-            <table>
+            </div>
+            <br>
+            {% endfor %}
+            <!-- <table>
                 
                 <tr>
-                    <td style="padding-right:8px ;">LINK TITLE:</td>
+                    <td style="padding-right:38px ;">LINK TITLE:</td>
 
-                    <td style="padding-right:3px ;">LINK:</td>
-                    <td style="padding-right:3px ;">SHORT LINK:</td>
+                    <td style="padding-right:38px ;">LINK:</td>
+                    <td style="padding-right:38px ;">SHORT LINK:</td>
                     <td>CLICK COUNT:</td>
                 </tr>
-                {% for url in url_instances %}
+                
                 <tr style="padding-bottom: 5px;">
-                    <td style="padding-bottom: 7px;" >{{url.title}}</td>
+                    <td style="padding: 8px ;margin:10px; font-size: 20px;" >{{url.title}}</td>
                     
-                    <td style="padding-bottom: 5px;"><a href="{{url.long_url}}" target="_blank">{{url.long_url}}</a></td>
+                    <td style="padding-bottom: 5px;padding-right:38px ; margin:10px; font-size: 20px;"><a href="{{url.long_url}}" target="_blank">{{url.long_url}}</a></td>
                     
-                    <td style="padding-bottom: 5px;"><a href="http://127.0.0.1:8000/{{url.short_hash}}" target="_blank">http://127.0.0.1:8000/{{url.short_hash}}</a></td>
+                    <td style="padding-bottom: 5px;padding-right:38px ;font-size: 20px; margin:10px"><a href="http://127.0.0.1:8000/{{url.short_hash}}" target="_blank">http://127.0.0.1:8000/{{url.short_hash}}</a></td>
                     
-                    <td style="padding-bottom: 5px;">{{url.no_clicks}}</td>
+                    <td style="padding-bottom: 5px; padding-right:38px ;font-size: 20px;float: right;">{{url.no_clicks}}</td>
                 </tr>
-                {% endfor %}
-            </table>
+                
+            </table> -->
             
         </div>
 
