@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block signin %}
+
+<div class="container" style="height: 70vh; display:flex; justify-content: center; align-items: center;">
+    <br>
+    <div class="card" style="width: 35rem;border: none;">
+        <div class="card-body" style="background-color:rgb(147, 209, 196); display:inline;border: none;">
+            <h5 class="card-title" style="font-size:xx-large;">Sign In</h5>
+            <form action="/signin/" method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" class="form-control" placeholder="Username">
+                <br>
+                <input type="password" name="password" class="form-control" placeholder="Password">
+                <br>
+                <button type="submit" class="btn btn-primary" style="width: 160px;">Signin</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
